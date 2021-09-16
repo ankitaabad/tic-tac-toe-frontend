@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import Cell from './cell.svelte';
+	import Grid from './grid.svelte';
+
+	import StartGame from './start_game.svelte';
+</script>
+
+<!-- <StartGame>
+
+</StartGame> -->
+<!-- <Cell/> -->
+<!-- <Grid></Grid> -->
+<StartGame />
