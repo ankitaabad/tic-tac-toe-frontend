@@ -1,1 +1,1 @@
-![tic-tac-toe](tic-tac-toe.png "Tic Tac Toe")
+![tic-tac-toe](tic-tac-toe.gif "Tic Tac Toe")
