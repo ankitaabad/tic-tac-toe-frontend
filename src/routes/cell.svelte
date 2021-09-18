@@ -34,7 +34,7 @@
 	};
 </script>
 
-<div {id} on:click={handleClick} class={clazz}>
+<div {id} on:click={handleClick} style="text-align:center" class={clazz}>
 	{value}
 </div>
 
@@ -42,28 +42,38 @@
 	div {
 		font-family: 'Permanent Marker';
 		font-size: 40px;
+		flex-direction: column;
 		/* border: 5px solid black; */
 		width: 60px;
 		height: 60px;
+		text-align: center !important;
+		vertical-align: middle !important;
+		display: inline-flex;
+		flex-wrap: wrap;	
+		color:#F7FFF7;
 		text-align: center;
 		vertical-align: middle;
-		display: inline-flex;
-		flex-wrap: wrap;
-		color:#F20544;
+		padding:auto;
+		
 	}
+
 	.lb {
-		border-left: 2px solid #363632;
+		border-left: 3px solid #494846;
 	}
 	.rb {
-		border-right: 2px solid #363632;
+		border-right: 3px solid #494846;
 	}
 	.tb {
-		border-top: 2px solid #363632;
+		border-top: 3px solid #494846;
 	}
 	.bb {
-		border-bottom: 2px solid #363632;
+		border-bottom: 3px solid #494846;
 	}
 	:global(body) {
-		background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+		background: #C6FFDD;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
 	}
 </style>

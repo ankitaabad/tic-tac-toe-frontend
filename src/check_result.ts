@@ -1,9 +1,10 @@
 import {matrix} from './matrix';
-enum win_type{
+enum result_type{
     ROW ="ROW",
     COLUMN ="COLUMN",
     DIAGONAL = "DIAGONAL",
     REVERSE_DIAGONAL = "REVERSE_DIAGONAL",   
+    DRAW="DRAW",
 }
 
 
@@ -20,7 +21,16 @@ const arr_to_object_count = (arr: Array<number>) => {
 const extract_column = (arr,col) => arr.map(ele => ele[col]);
 const get_row = (arr) => extract_column(arr,'row');
 const get_column = (arr) => extract_column(arr,'column');
-
+const check_game_status = (current_player_moves,other_player_moves) =>{
+    return is_won(current_player_moves) || is_draw(current_player_moves,other_player_moves)
+}
+const is_draw = (m1,m2) =>{
+    if(m1.length + m2.length === 9){
+        return {
+            type: result_type.DRAW
+        }
+    }
+}
 const is_won = (arr_moves) =>{
     console.log("a_m",arr_moves);
     const moves = get_moves(arr_moves);
@@ -31,7 +41,7 @@ const row_same = (moves) =>{
     const row = is_count_3(rows);
     if(row){
         return {
-            type: win_type.ROW,
+            type: result_type.ROW,
             index: row,
         }
     }
@@ -41,7 +51,7 @@ const col_same = (moves) =>{
     const col = is_count_3(cols)
     if(col){
         return {
-            type: win_type.COLUMN,
+            type: result_type.COLUMN,
             index:col,
         }
     }
@@ -51,7 +61,7 @@ const diagonal = (moves) =>{
     const filtered_moves = moves.filter((obj) => obj.row === obj.column)
     if(filtered_moves.length === 3){
         return {
-            type:win_type.DIAGONAL
+            type:result_type.DIAGONAL
         }
     }
 }
@@ -60,7 +70,7 @@ const reverse_diagonal = (moves) =>{
     const filtered_moves = moves.filter((obj) => (obj.row + obj.column) ===4);
     if(filtered_moves.length === 3){
         return {
-            type:win_type.REVERSE_DIAGONAL
+            type:result_type.REVERSE_DIAGONAL
         }
     }
 }
@@ -77,4 +87,4 @@ const is_count_3 = (arr) =>{
 }
 // console.log(is_won([1,5,9]));
 
-export {is_won}
+export {check_game_status}

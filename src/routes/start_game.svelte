@@ -28,12 +28,15 @@
 </script>
 
 <div>
-	<Button variant="raised" on:click={create_game}>
-		<Label>Create Game</Label>
-	</Button>
+	
+
+		<Button variant="raised"  style="width:100%;"  on:click={create_game}>
+			<Label>Create Game</Label>
+		</Button>
+	
 	<br />
 
-	<Button variant="raised" class="button-shaped-round" on:click={join_game}>
+	<Button variant="raised"  style="width:100%;"  on:click={join_game}>
 		<Label>Join Game</Label>
 	</Button>
 </div>
@@ -43,8 +46,8 @@
 		display: flex;
 		width: 100%;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		border: 1px solid maroon;
+		
 	}
+
+	
 </style>
